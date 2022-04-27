@@ -9,6 +9,8 @@ router.get("/test-me", function (req, res) {
 router.post("/author", authorController.createAuthor  )
 
 router.post("/blog", blogController.createBlog)
+router.get("/blog", blogController.GetData)
 
-
+router.put("/updateblog/:blogId", blogController.updateblog)
+router.delete("/deleteBlogById/:blogId", blogController.deleteBlogById)
 module.exports = router;
