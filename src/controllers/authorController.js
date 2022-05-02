@@ -15,17 +15,17 @@ try {
   if (Object.keys(author).length == 0) return res.status(400).send({ status: false, msg: "Data is required to add a Author" });
 
   //Below is the validation for the data for email, password, name
-  if(!author.firstname) return res.status(400).send({ status: false, msg: "First Name is required" });
-  if(!author.lastname) return res.status(400).send({ status: false, msg: "Last Name is required" });
+  if(!author.fname) return res.status(400).send({ status: false, msg: "First Name is required" });
+  if(!author.lname) return res.status(400).send({ status: false, msg: "Last Name is required" });
   if(!author.title) return res.status(400).send({ status: false, msg: "Title is required" });
   if(!author.email) return res.status(400).send({ status: false, msg: "Email is required" });
-  if(!author.Password) return res.status(400).send({ status: false, msg: "Password is required" });
+  if(!author.password) return res.status(400).send({ status: false, msg: "Password is required" });
   
   let validString = /\d/; //validating the string for numbers
 
   //checking if the firstName and lastName are valid string
-  if(validString.test(author.firstname)) return res.status(400).send({ status: false, msg: "Enter a valid First Name" });
-  if(validString.test(author.lastname)) return res.status(400).send({ status: false, msg: "Enter a valid Last Name" });
+  if(validString.test(author.fname)) return res.status(400).send({ status: false, msg: "Enter a valid First Name" });
+  if(validString.test(author.lname)) return res.status(400).send({ status: false, msg: "Enter a valid Last Name" });
 
   let validTitle = ['Mr', 'Mrs', 'Miss']; //validating the title
 
